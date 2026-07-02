@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon Luxury Hotel</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-hotel"></i> Grand Horizon
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#booking">Book a Room</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Experience Luxury <br><span>Like Never Before</span></h1>
+            <p>Welcome to Grand Horizon, where elegant architecture meets world-class hospitality. Book your sanctuary today.</p>
+            <a href="#booking" class="btn">Reserve Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Grand Horizon Luxury Hotel Entrance">
+        </div>
+    </section>
+
+    <section id="amenities" class="amenities-section">
+        <h2 class="section-title">Premium Amenities</h2>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <i class="fa-solid fa-water-ladder"></i>
+                <h3>Infinity Pool</h3>
+                <p>Relax by our temperature-controlled outdoor pool with breathtaking skyline views.</p>
+            </div>
+            <div class="amenity-card">
+                <i class="fa-solid fa-spa"></i>
+                <h3>Wellness Spa</h3>
+                <p>Rejuvenate your senses with award-winning therapy and traditional massage treatments.</p>
+            </div>
+            <div class="amenity-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Fine Dining</h3>
+                <p>Savor exquisite international dishes curated by Michelin-starred culinary chefs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <h2 class="section-title">Room Reservation System</h2>
+        <div class="booking-container">
+            <div class="booking-form">
+                <form id="hotelBookingForm" onsubmit="calculateAndBook(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="roomType">Room Category</label>
+                            <select id="roomType" onchange="updateRoomPrice()">
+                                <option value="standard" data-price="100">Standard Room ($100/night)</option>
+                                <option value="deluxe" data-price="180">Deluxe Suite ($180/night)</option>
+                                <option value="presidential" data-price="350">Presidential Suite ($350/night)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkIn">Check-In Date</label>
+                            <input type="date" id="checkIn" required onchange="calculateAndBook(null)">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkOut">Check-Out Date</label>
+                            <input type="date" id="checkOut" required onchange="calculateAndBook(null)">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" min="1" max="4" value="1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="price-summary" id="priceSummary">
+                        Select dates to see total pricing estimate.
+                    </div>
+
+                    <button type="submit" class="btn book-btn">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-container">
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Our concierge team will reach out shortly.');">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Special Requests or Questions..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Grand Horizon Luxury Resorts. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
