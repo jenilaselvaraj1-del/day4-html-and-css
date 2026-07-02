@@ -1,0 +1,20 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+#btn{
+    cursor: pointer;
+    font-size: medium;
+    border-radius: 20px;
+    background-color: rgb(130, 207, 132);
+    background-size: auto;
+}
+
+.active{
+    color: purple;
+}
+
+.toggle{
+    background-color: black;
+    color: white;
+}
